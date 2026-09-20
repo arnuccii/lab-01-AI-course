@@ -1,8 +1,7 @@
 # Assignment 1 · Lab 01 — The Price of One Request
 
-**Student Name:** [Твое Имя и Фамилия]  
-**Course:** AI Course, Narxoz University  
-**Date:** September 2026  
+**Student Name:** Arnur Berikuly 
+  **Date:** September 2026  
 
 ---
 
@@ -75,7 +74,7 @@
 
 ## 6. AI-Use Declaration
 
-**Student Name:** [Твое Имя и Фамилия]  
+**Student Name:** Arnur Berikuly 
 **AI Tools Used:** ChatGPT / Gemini / Claude  
 
 ### Details of AI Tool Usage:
