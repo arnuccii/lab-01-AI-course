@@ -1,12 +1,6 @@
 """Parallel test corpus for Lab 01.
 
-The same three items in English, Russian and Kazakh. Parallel meaning is the
-point: any difference in token count is a property of the tokenizer, not of
-what is being said.
-
-Instructors: the Kazakh and Russian wordings are a starting point. Substitute
-your own if you prefer -- but keep the three versions semantically parallel,
-otherwise the comparison measures translation length instead of tokenization.
+The same items in English, Russian and Kazakh.
 """
 
 from __future__ import annotations
@@ -69,9 +63,42 @@ SYSTEM_PROMPT: Dict[str, str] = {
     ),
 }
 
+# --- ЗАДАНИЕ 1: Новый случайный пункт (Контракт) ---
+CONTRACT_CLAUSE: Dict[str, str] = {
+    "en": "The loan agreement remains valid for twelve months from the date of signing.",
+    "ru": "Кредитный договор остается действительным в течение двенадцати месяцев с даты подписания.",
+    "kk": "Несие шарты қол қойылған күннен бастап он екі ай бойы жарамды болып қалады.",
+}
+
+# --- ЗАДАНИЕ 2: Казахская премия ---
+# kk_common: Используются только буквы, общие с русским алфавитом (без ә, ғ, қ, ң, ө, ұ, ү, һ, і)
+KK_COMMON: Dict[str, str] = {
+    "en": "The service quality for clients in this bank branch is high.",
+    "ru": "Качество обслуживания клиентов в этом отделении банка высокое.",
+    "kk": "Бул банк болимшесинде клиенттерге кызмет корсету сапасы жогары.",
+}
+
+# kk_dense: Насыщен спец-буквами (ә, ғ, қ, ң, ө, ұ, ү, һ, і)
+KK_DENSE: Dict[str, str] = {
+    "en": "A beautiful national art center and two wonderful houses are located on the river bank.",
+    "ru": "Красивый национальный центр искусств и два замечательных дома расположены на берегу реки.",
+    "kk": "Әдемі өзеннің жағасында ғажайып қос үй мен ұлттық өнер орталығы орналасқан.",
+}
+
+# --- ЗАДАНИЕ 3: Жалоба в формате JSON ---
+COMPLAINT_JSON: Dict[str, str] = {
+    "en": '{"opened": "March", "rate_type": "fixed", "duration": "twelve months", "issue": "rate dropped in August without notice", "request": "explain and restore terms"}',
+    "ru": '{"opened": "Март", "rate_type": "фиксированная", "duration": "двенадцать месяцев", "issue": "ставка снизилась в августе без уведомления", "request": "объяснить и восстановить условия"}',
+    "kk": '{"opened": "Наурыз", "rate_type": "бекітілген", "duration": "он екі ай", "issue": "тамызда мөлшерлеме ескертусіз төмендеді", "request": "түсіндіру және шарттарды қалпына келтіру"}',
+}
+
 #: Everything the lab measures, keyed by a short id.
 CORPUS: Dict[str, Dict[str, str]] = {
     "sentence": SENTENCE,
     "complaint": COMPLAINT,
     "system_prompt": SYSTEM_PROMPT,
+    "contract_clause": CONTRACT_CLAUSE,
+    "kk_common": KK_COMMON,
+    "kk_dense": KK_DENSE,
+    "complaint_json": COMPLAINT_JSON,
 }
